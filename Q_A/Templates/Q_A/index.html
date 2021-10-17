@@ -1,0 +1,12 @@
+{% extends "Q_A/layout.html" %}
+
+{% block body %}
+<h1>Soru Ve Cevaplar</h1>
+<ul>
+    {% for soruvecevaplar in SC %}
+    <li> <h2>{{soruvecevaplar.pub_date}} tarihli soru {{soruvecevaplar.id}}: {{soruvecevaplar.question_text}}</h2></li>  
+    <h3>Cevap: {{soruvecevaplar.answer}}</h3>
+    {% endfor %}
+</ul>
+
+{% endblock %}

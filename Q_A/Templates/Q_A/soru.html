@@ -1,0 +1,19 @@
+{% extends "Q_A/layout.html" %}
+
+{% block body %}
+<h1>Soru {{soruvecevaplar.id}}</h1>
+<ul>
+    {% for soruvecevaplar in SC %}
+    <li> <h2>{{soruvecevaplar.pub_date}} tarihli soru {{soruvecevaplar.id}}: {{soruvecevaplar.question_text}}</h2></li>  
+    <h3>Cevap: {{soruvecevaplar.answer}}</h3>
+    {% endfor %}
+</ul>
+
+<h2>Add Question</h2>
+<form action="{% url 'book' soru_postid %}" method="post"></form>
+{%csrf_token%}
+<select name="answer">
+    <option value="value">text</option>
+</select>
+
+{% endblock %}
